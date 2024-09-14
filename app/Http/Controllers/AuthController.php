@@ -87,17 +87,12 @@ class AuthController extends Controller
     {
         $accessTokenNew = auth()->refresh();
 
-        // Menghasilkan access token baru
-        $accessToken = auth()->setToken($accessTokenNew)->getToken();
 
-        return $this->respondWithToken($accessToken);
+        return $this->respondWithToken($accessTokenNew);
     }
 
 
-    public function haha()
-    {
-        return response('asd', 200);
-    }
+
     
 
     /**
